@@ -22,3 +22,4 @@ Electrical playing propulsion demo
     ```shell 
     poetry install
     ```
+6. Make src directory as Source Root
