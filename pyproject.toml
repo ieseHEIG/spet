@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "spet"
+version = "0.1.0"
+description = ""
+authors = ["luca.tomasini <luca.tomaini@heig-vd.ch>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+bokeh = "^3.0.2"
+Pillow = "^9.3.0"
+requests = "^2.28.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
