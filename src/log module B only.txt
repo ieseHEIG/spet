@@ -1,0 +1,282 @@
+no match for device ID 0x1 on bus c_ushort(81)
+PCAN_NONEBUS for device ID 0x1
+PCAN_NONEBUS for device ID 0x2
+Opening Bokeh application on http://localhost:5006/
+no match for device ID 0x1 on bus c_ushort(81)
+PCAN_NONEBUS for device ID 0x1
+device ID 0x2 match on bus c_ushort(81)
+PCAN_USBBUS1 OK for device ID 0x2
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+BATTERY A status modification: ERROR CAN SOFTWARE WATCHDOG
+BATTERY B status modification: ERROR CAN SOFTWARE WATCHDOG
+MPPT A status modification: ERROR CAN SOFTWARE WATCHDOG
+MPPT B status modification: ERROR CAN SOFTWARE WATCHDOG
+DRIVE A status modification: ERROR CAN SOFTWARE WATCHDOG
+DRIVE B status modification: ERROR CAN SOFTWARE WATCHDOG
+404 GET /favicon.ico (::1) 4.00ms
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+no match for device ID 0x1 on bus c_ushort(81)
+PCAN_NONEBUS for device ID 0x1
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+no match for device ID 0x1 on bus c_ushort(81)
+PCAN_NONEBUS for device ID 0x1
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+no match for device ID 0x1 on bus c_ushort(81)
+PCAN_NONEBUS for device ID 0x1
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+BATTERY B status modification: INFO, BMS OK, BMS IDLE
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+no match for device ID 0x1 on bus c_ushort(81)
+PCAN_NONEBUS for device ID 0x1
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+no match for device ID 0x1 on bus c_ushort(81)
+PCAN_NONEBUS for device ID 0x1
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+no match for device ID 0x1 on bus c_ushort(81)
+PCAN_NONEBUS for device ID 0x1
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+no match for device ID 0x1 on bus c_ushort(81)
+PCAN_NONEBUS for device ID 0x1
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+no match for device ID 0x1 on bus c_ushort(81)
+PCAN_NONEBUS for device ID 0x1
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+sent bytes on module_b, can id 0x200: (0, 0, 0, 255, 0, 0, 0, 0)
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+no match for device ID 0x1 on bus c_ushort(81)
+PCAN_NONEBUS for device ID 0x1
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+no match for device ID 0x1 on bus c_ushort(81)
+PCAN_NONEBUS for device ID 0x1
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+BATTERY B status modification: INFO, BMS OK, DISCHARGING
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+no match for device ID 0x1 on bus c_ushort(81)
+PCAN_NONEBUS for device ID 0x1
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+no match for device ID 0x1 on bus c_ushort(81)
+PCAN_NONEBUS for device ID 0x1
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+no match for device ID 0x1 on bus c_ushort(81)
+PCAN_NONEBUS for device ID 0x1
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+no match for device ID 0x1 on bus c_ushort(81)
+PCAN_NONEBUS for device ID 0x1
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+no match for device ID 0x1 on bus c_ushort(81)
+PCAN_NONEBUS for device ID 0x1
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+no match for device ID 0x1 on bus c_ushort(81)
+PCAN_NONEBUS for device ID 0x1
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+no match for device ID 0x1 on bus c_ushort(81)
+PCAN_NONEBUS for device ID 0x1
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+no match for device ID 0x1 on bus c_ushort(81)
+PCAN_NONEBUS for device ID 0x1
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+no match for device ID 0x1 on bus c_ushort(81)
+PCAN_NONEBUS for device ID 0x1
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+no match for device ID 0x1 on bus c_ushort(81)
+PCAN_NONEBUS for device ID 0x1
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+sent bytes on module_b, can id 0x200: (0, 0, 0, 255, 0, 0, 0, 0)
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+no match for device ID 0x1 on bus c_ushort(81)
+PCAN_NONEBUS for device ID 0x1
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+no match for device ID 0x1 on bus c_ushort(81)
+PCAN_NONEBUS for device ID 0x1
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+no match for device ID 0x1 on bus c_ushort(81)
+PCAN_NONEBUS for device ID 0x1
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+no match for device ID 0x1 on bus c_ushort(81)
+PCAN_NONEBUS for device ID 0x1
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+no match for device ID 0x1 on bus c_ushort(81)
+PCAN_NONEBUS for device ID 0x1
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+no match for device ID 0x1 on bus c_ushort(81)
+PCAN_NONEBUS for device ID 0x1
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB
+PCAN_ERROR 0x1c00 on module A, see PCANlib.py or try to unplug/replug PCAN_USB

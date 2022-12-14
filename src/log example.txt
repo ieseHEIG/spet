@@ -1,0 +1,41 @@
+device ID 0x1 match on bus c_ushort(81)
+PCAN_USBBUS1 OK for device ID 0x1
+device ID 0x2 match on bus c_ushort(82)
+PCAN_USBBUS2 OK for device ID 0x2
+Opening Bokeh application on http://localhost:5006/
+sent bytes on module_a, can id 0x200: (0, 0, 0, 255, 0, 0, 0, 0)
+sent bytes on module_b, can id 0x200: (0, 0, 0, 255, 0, 0, 0, 0)
+404 GET /favicon.ico (::1) 1.00ms
+BATTERY A status modification: ERROR CAN SOFTWARE WATCHDOG
+BATTERY B status modification: ERROR CAN SOFTWARE WATCHDOG
+MPPT A status modification: ERROR CAN SOFTWARE WATCHDOG
+MPPT B status modification: ERROR CAN SOFTWARE WATCHDOG
+DRIVE A status modification: ERROR CAN SOFTWARE WATCHDOG
+DRIVE B status modification: ERROR CAN SOFTWARE WATCHDOG
+BATTERY A status modification: INFO, BMS OK, DISCHARGING
+BATTERY B status modification: INFO, BMS OK, DISCHARGING
+sent bytes on module_a, can id 0x200: (0, 0, 0, 255, 0, 0, 0, 0)
+BATTERY A status modification: ERROR  State Of Health < 80%
+BATTERY A status modification: INFO, BMS OK, DISCHARGING
+sent bytes on module_b, can id 0x200: (0, 0, 0, 255, 0, 0, 0, 0)
+BATTERY A status modification: ERROR  State Of Health < 80%
+BATTERY A status modification: INFO, BMS OK, DISCHARGING
+sent bytes on module_a, can id 0x200: (0, 0, 0, 255, 0, 0, 0, 0)
+sent bytes on module_b, can id 0x200: (0, 0, 0, 255, 0, 0, 0, 0)
+sent bytes on module_a, can id 0x200: (0, 0, 0, 255, 0, 0, 0, 0)
+BATTERY A status modification: ERROR  State Of Health < 80%
+BATTERY A status modification: INFO, BMS OK, DISCHARGING
+sent bytes on module_b, can id 0x200: (0, 0, 0, 255, 0, 0, 0, 0)
+sent bytes on module_a, can id 0x200: (0, 0, 0, 255, 0, 0, 0, 0)
+sent bytes on module_b, can id 0x200: (0, 0, 0, 255, 0, 0, 0, 0)
+BATTERY A status modification: ERROR  State Of Health < 80%
+BATTERY A status modification: INFO, BMS OK, DISCHARGING
+sent bytes on module_a, can id 0x200: (0, 0, 0, 255, 0, 0, 0, 0)
+sent bytes on module_b, can id 0x200: (0, 0, 0, 255, 0, 0, 0, 0)
+BATTERY A status modification: INFO, BMS OK
+sent bytes on module_a, can id 0x200: (0, 0, 0, 255, 0, 0, 0, 0)
+BATTERY A status modification: INFO, BMS OK, DISCHARGING
+sent bytes on module_b, can id 0x200: (0, 0, 0, 255, 0, 0, 0, 0)
+sent bytes on module_a, can id 0x200: (0, 0, 0, 255, 0, 0, 0, 0)
+BATTERY A status modification: ERROR  State Of Health < 80%
+BATTERY A status modification: INFO, BMS OK, DISCHARGING

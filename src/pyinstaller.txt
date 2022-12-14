@@ -18,10 +18,6 @@ options utiles:
 ou direct:
 C:\Users\admin\AppData\Roaming\Python\Python310\Scripts\pyinstaller.exe --icon=decollage_freepik.png -F spetUI.py
 
-supprimer dossier avant recompilation après modifs !
-
-
-
 
 https://cython.org/
 https://cython.readthedocs.io/en/latest/index.html

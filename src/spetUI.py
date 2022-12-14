@@ -5,7 +5,8 @@ Graphical User Interface (web browser) for SPET project
 install peak-can drivers, python then "pip install panel" which include bokeh
 
 To do:
-Add 6 texts zones relatives to the 6 color status
+Add 6 texts zones relatives to the 6 color status (BAT_ MPPT_ and DRIVE_ STATUS_TEXT)
+then remove STATUS_TEXT_prints
 
 Add 2x 5 ticks linked to 5 variables (0x00 or 0xFF), they will be sent over CAN bus for module A and B
 Safe Shutdown
@@ -13,6 +14,9 @@ Charge Request
 Discharge Request
 Clear Faults
 Reboot Request
+
+with a 24v/6A power supply instead of 3A, it is possible to remove delays between activations:
+serach for parts relative to TS_UPDATE_OLD1 and TS_UPDATE_OLD2
 
 
 PCAN_RW:
@@ -22,7 +26,7 @@ DRIVE & MPPT tests, errors/warning table definitions
 # from bokeh.models import Slider, Button
 
 from bokeh.server.server import Server
-from bokeh.models import TabPanel, Tabs
+from bokeh.models.widgets import TabPanel, Tabs
 
 from spetDashboard import *
 
@@ -54,7 +58,7 @@ class SpetUI():
         Bokeh application definitions
         """
         tab1 = TabPanel(child=self.cockpit_view.fig, title="Cockpit view")
-        # tab2 = Panel(child=column(self.diag_view, plot), title="Diagnostic")
+        # tab2 = TabPanel(child=column(self.diag_view, plot), title="Diagnostic")
         doc.add_root(Tabs(tabs=[tab1]))  # doc.add_root(Tabs(tabs=[tab1, tab2]))
         doc.add_periodic_callback(self._get_data, self.update_rate_data)
         doc.add_periodic_callback(self._update_indicators, self.update_rate_display)
@@ -89,14 +93,9 @@ class SpetUI():
             mppt_2_t1 = min(mppt_2_t1, spet_b.MPPT_T1[i], spet_b.MPPT_T2[i])
             mppt_2_t2 = max(mppt_2_t1, spet_b.MPPT_T1[i], spet_b.MPPT_T2[i])
 
-        # called here, in case there is no received CAN messages (watchdogs...)
-        # and for better processing efficiency
-        spet_a.LeclancheStatus()
-        spet_a.MpptStatus()
-        spet_a.DriveStatus()
-        spet_b.LeclancheStatus()
-        spet_b.MpptStatus()
-        spet_b.DriveStatus()
+        
+        self.STATUS_TEXT_prints()
+
 
         self.cockpit_view.set_values({
                                       "rpm":           [0],
@@ -223,7 +222,7 @@ class SpetUI():
         elif status_a == PCAN_ERROR_QRCVEMPTY:
             return 1
         else:
-            print("PCAN_ERROR " + str(hex(status_a)))
+            print("PCAN_ERROR " + str(hex(status_a)) + " on module A, see PCANlib.py or try to unplug/replug PCAN_USB")
             return 2
 
     def CAN_read_module_b(self):
@@ -244,13 +243,16 @@ class SpetUI():
         elif status_b == PCAN_ERROR_QRCVEMPTY:
             return 1
         else:
-            print("PCAN_ERROR " + str(hex(status_b)))
+            print("PCAN_ERROR " + str(hex(status_b)) + " on module B, see PCANlib.py or try to unplug/replug PCAN_USB")
             return 2
 
     def CAN_set_module_a(self):
         """
         CAN bus sent message, first check ID
         """
+        if spet_a.PcanHandle == PCAN_NONEBUS:
+            return
+
         try:
             spet_a_ID = spet_a.GetDeviceId()
         except:
@@ -270,6 +272,9 @@ class SpetUI():
         """
         CAN bus sent message, first check ID
         """
+        if spet_b.PcanHandle == PCAN_NONEBUS:
+            return
+
         try:
             spet_b_ID = spet_b.GetDeviceId()
         except:
@@ -332,7 +337,53 @@ class SpetUI():
         spet_b.BAT_WATCHDOG = 0
         spet_b.DRIVE_WATCHDOG = 0
         spet_b.MPPT_WATCHDOG = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        
+        
+        # called here, in case there is no received CAN messages (watchdogs...)
+        spet_a.LeclancheDecode()
+        spet_a.MpptDecode()
+        spet_a.DriveDecode()
+        spet_b.LeclancheDecode()
+        spet_b.MpptDecode()
+        spet_b.DriveDecode()
+        # and for better processing efficiency (no intermediaite status_text)
+        spet_a.LeclancheStatus()
+        spet_a.MpptStatus()
+        spet_a.DriveStatus()
+        spet_b.LeclancheStatus()
+        spet_b.MpptStatus()
+        spet_b.DriveStatus()
 
+    def STATUS_TEXT_prints(self):
+        """
+        Print status text modifications in console,
+        can be removed after graphical user interface implementation
+        """
+        if spet_a.BAT_STATUS_TEXT_OLD != spet_a.BAT_STATUS_TEXT:
+            print("BATTERY A status modification: " + spet_a.BAT_STATUS_TEXT)
+            spet_a.BAT_STATUS_TEXT_OLD = spet_a.BAT_STATUS_TEXT
+
+        if spet_b.BAT_STATUS_TEXT_OLD != spet_b.BAT_STATUS_TEXT:
+            print("BATTERY B status modification: " + spet_b.BAT_STATUS_TEXT)
+            spet_b.BAT_STATUS_TEXT_OLD = spet_b.BAT_STATUS_TEXT
+
+
+        if spet_a.MPPT_STATUS_TEXT_OLD != spet_a.MPPT_STATUS_TEXT:
+            print("MPPT A status modification: " + spet_a.MPPT_STATUS_TEXT)
+            spet_a.MPPT_STATUS_TEXT_OLD = spet_a.MPPT_STATUS_TEXT
+
+        if spet_b.MPPT_STATUS_TEXT_OLD != spet_b.MPPT_STATUS_TEXT:
+            print("MPPT B status modification: " + spet_b.MPPT_STATUS_TEXT)
+            spet_b.MPPT_STATUS_TEXT_OLD = spet_b.MPPT_STATUS_TEXT
+
+
+        if spet_a.DRIVE_STATUS_TEXT_OLD != spet_a.DRIVE_STATUS_TEXT:
+            print("DRIVE A status modification: " + spet_a.DRIVE_STATUS_TEXT)
+            spet_a.DRIVE_STATUS_TEXT_OLD = spet_a.DRIVE_STATUS_TEXT
+
+        if spet_b.DRIVE_STATUS_TEXT_OLD != spet_b.DRIVE_STATUS_TEXT:
+            print("DRIVE B status modification: " + spet_b.DRIVE_STATUS_TEXT)
+            spet_b.DRIVE_STATUS_TEXT_OLD = spet_b.DRIVE_STATUS_TEXT
 
 if __name__ == '__main__':
     print('Opening Bokeh application on http://localhost:5006/')

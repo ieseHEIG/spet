@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Class PcanRW, depend on a device identifier as a parameter (0x1 et 0x2 for SPET modules, A and B),
+Class PcanRW, depend on a device identifier as a parameter (0x1 et 0x2 for SPET modules, A and B as physically labeled),
 allow read/write on matching CAN bus PCAN_USBBUS1 or PCAN_USBBUS2
 
 The operation of the PCAN driver is such that bus 1 or 2 must be associated (connection order...) with a read ID
@@ -48,7 +48,7 @@ class PcanRW():
     """
     PcanHandle = PCAN_NONEBUS  # PCAN_USBBUS1, PCAN_USBBUS2, PCAN_NONEBUS
     Bitrate = PCAN_BAUD_250K
-    PcanId = 0
+    # PcanId = 0
 
     m_DLLFound = False
 
@@ -65,6 +65,9 @@ class PcanRW():
         self.LeclancheInit()
         self.MpptInit()
         self.DriveInit()
+        self.BAT_STATUS_TEXT_OLD = ''
+        self.MPPT_STATUS_TEXT_OLD = ''
+        self.DRIVE_STATUS_TEXT_OLD = ''
 
         ## Checks if PCANBasic.dll is available, if not, the terminates without PCAN hardware inits
         try:
@@ -115,7 +118,7 @@ class PcanRW():
                 print("no match for device ID " + str(hex(self.PcanId)) + " on bus " + str(self.PcanHandle))
                 return 2
         else:
-            # print("other initialisation error" + str(hex(stsResult)))
+            # print("PCAN initialisation error " + str(hex(stsResult)))
             return 3
 
     def UnsetDevice(self):
@@ -239,7 +242,7 @@ class PcanRW():
         self.BAT_POWER = 0  # VOLTAGE x CURRENT / 1000 --> kW
         self.BAT_INITIAL_CAPACITY = 19  # kW.h of a new battery
         self.BAT_REMAINING_ENERGY = 0  # SOC x SOH x INITIAL_CAPACITY
-        self.BAT_STATUS_TEXT = 'INIT'
+        # self.BAT_STATUS_TEXT = ''
         self.BAT_STATUS_COLOR = 'RED'  # GREEN, ORANGE, RED
         self.BAT_WATCHDOG = 0   # each periodic necessary message activate bits 0x01 0x02 0x04 0x08 0x10 0x20...
                                 # for BAT, periodic check that sum == 0x3F and reset to zero, or error activation (32 is free about BAT)
@@ -267,7 +270,6 @@ class PcanRW():
                 self.BAT_CHARGE_I_LIM = hex2num(self.BAT_CHARGE_I_LIM) / 10  # A
                 self.BAT_DISCHARGE_I_LIM = hex2num(self.BAT_DISCHARGE_I_LIM) / 10  # A
 
-                # print()
                 # print("Module A, tpdo_1, BAT_HEARTBEAT1", self.BAT_HEARTBEAT1, "BAT_SOC", self.BAT_SOC, "BAT_ACTIVE_ERR",  self.BAT_ACTIVE_ERR,
                 #       "BAT_ACTIVE_WARN", self.BAT_ACTIVE_WARN, "BAT_CHARGE_I_LIM", self.BAT_CHARGE_I_LIM, "BAT_DISCHARGE_I_LIM", self.BAT_DISCHARGE_I_LIM)
 
@@ -400,22 +402,32 @@ class PcanRW():
         Set status text and color about battery module
         See Leclanché document tables
         Initialisations
-        self.BAT_STATUS_TEXT = 'INIT'
+        self.BAT_STATUS_TEXT = ''
         self.BAT_STATUS_COLOR = 'RED'  # GREEN, ORANGE, RED
+        
+        A test with 2 modules is ok for B but A have anormal alternating status:
+        BATTERY A status modification:  State Of Health < 80%
+        BATTERY A status modification: BMS OK, DISCHARGING
+        ....
+        BATTERY A status modification: BMS OK
+        BATTERY A status modification: BMS OK, DISCHARGING
+        ....
+        BATTERY A status modification: , BAT FULL, DISCHARGING
+        BATTERY A status modification: BMS OK, DISCHARGING
         """
         self.BAT_STATUS_TEXT = ''
 
         # Error
         if self.BAT_ACTIVE_ERR != 0 or self.BAT_SOH < 80:
-            self.BAT_STATUS_TEXT = self.Leclanche_Err_Warn_table(self.BAT_ACTIVE_ERR)
-            if self.BAT_SOH < 80:
+            self.BAT_STATUS_TEXT = 'ERROR ' + self.Leclanche_Err_Warn_table(self.BAT_ACTIVE_ERR)
+            if self.BAT_SOH < 80 and self.BAT_WATCHDOG_FLAG == 0:
                 self.BAT_STATUS_TEXT = self.BAT_STATUS_TEXT + ' State Of Health < 80%'
             # print("self.BAT_STATUS_TEXT erreur", self.BAT_STATUS_TEXT)
             self.BAT_STATUS_COLOR = 'RED'
 
         # Warning
         elif self.BAT_ACTIVE_WARN != 0 or self.BAT_SOH < 82:
-            self.BAT_STATUS_TEXT = self.Leclanche_Err_Warn_table(self.BAT_ACTIVE_WARN)
+            self.BAT_STATUS_TEXT = 'WARNING ' + self.Leclanche_Err_Warn_table(self.BAT_ACTIVE_WARN)
             if self.BAT_SOH < 82:
                 self.BAT_STATUS_TEXT = self.BAT_STATUS_TEXT + ' State Of Health < 82%'
             # print("self.BAT_STATUS_TEXT warning", self.BAT_STATUS_TEXT)
@@ -423,8 +435,9 @@ class PcanRW():
 
         # Info
         else:
+            self.BAT_STATUS_TEXT = 'INFO'
             if self.BMS_OK > 0:
-                self.BAT_STATUS_TEXT = 'BMS OK'
+                self.BAT_STATUS_TEXT = self.BAT_STATUS_TEXT + ', BMS OK'
             if self.BMS_IDLE > 0:
                 self.BAT_STATUS_TEXT = self.BAT_STATUS_TEXT + ', BMS IDLE'
             # if self.BMS_CHARGE > 0:
@@ -517,7 +530,7 @@ class PcanRW():
         self.MPPT_T2 = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
         # calculated or analysed:
-        self.MPPT_STATUS_TEXT = 'INIT'
+        # self.MPPT_STATUS_TEXT = ''
         self.MPPT_STATUS_COLOR = 'RED'  # GREEN, ORANGE, RED
         self.MPPT_WATCHDOG = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]  # periodic sum for each MPPT module: valid watchdog is 0x07
         self.MPPT_WATCHDOG_FLAG = 1
@@ -585,19 +598,19 @@ class PcanRW():
 
         # Error
         if max(self.MPPT_ERR) != 0:
-            self.MPPT_STATUS_TEXT = self.Mppt_Err_table(max(self.MPPT_ERR))
+            self.MPPT_STATUS_TEXT = 'ERROR ' + self.Mppt_Err_table(max(self.MPPT_ERR))
             # print("self.MPPT_STATUS_TEXT erreur", self.MPPT_STATUS_TEXT)
             self.MPPT_STATUS_COLOR = 'RED'
 
         # Warning
         elif max(self.MPPT_WARN) != 0:
-            self.MPPT_STATUS_TEXT = self.Mppt_Warn_table(max(self.MPPT_WARN))
+            self.MPPT_STATUS_TEXT = 'WARNING ' + self.Mppt_Warn_table(max(self.MPPT_WARN))
             # print("self.MPPT_STATUS_TEXT warning", self.MPPT_STATUS_TEXT)
             self.MPPT_STATUS_COLOR = 'ORANGE'
 
         # Info
         else:
-            self.MPPT_STATUS_TEXT = 'MPPT OK'
+            self.MPPT_STATUS_TEXT = 'INFO, MPPT OK'
             # print("self.MPPT_STATUS_TEXT info", self.MPPT_STATUS_TEXT)
             self.MPPT_STATUS_COLOR = 'GREEN'
 
@@ -708,7 +721,7 @@ class PcanRW():
         self.DRIVE_ANALOG_INPUT_2 = 0
 
         # calculated or analysed:
-        self.DRIVE_STATUS_TEXT = 'INIT'
+        # self.DRIVE_STATUS_TEXT = ''
         self.DRIVE_STATUS_COLOR = 'RED'  # GREEN, ORANGE, RED
         self.DRIVE_WATCHDOG = 0  # periodic sum: valid watchdog is 0x1FF
         self.DRIVE_WATCHDOG_FLAG = 1
@@ -828,19 +841,19 @@ class PcanRW():
 
         # Error
         if self.DRIVE_ERR != 0:
-            self.DRIVE_STATUS_TEXT = self.Drive_Err_table(self.DRIVE_ERR)
+            self.DRIVE_STATUS_TEXT = 'ERROR ' + self.Drive_Err_table(self.DRIVE_ERR)
             # print("self.DRIVE_STATUS_TEXT erreur", self.DRIVE_STATUS_TEXT)
             self.DRIVE_STATUS_COLOR = 'RED'
 
         # Warning
         elif self.DRIVE_WARN != 0:
-            self.DRIVE_STATUS_TEXT = self.Drive_Warn_table(self.DRIVE_WARN)
+            self.DRIVE_STATUS_TEXT = 'WARNING ' + self.Drive_Warn_table(self.DRIVE_WARN)
             # print("self.DRIVE_STATUS_TEXT warning", self.DRIVE_STATUS_TEXT)
             self.DRIVE_STATUS_COLOR = 'ORANGE'
 
         # Info
         else:
-            self.DRIVE_STATUS_TEXT = 'DRIVE OK'
+            self.DRIVE_STATUS_TEXT = 'INFO DRIVE OK'
             # print("self.DRIVE_STATUS_TEXT info", self.DRIVE_STATUS_TEXT)
             self.DRIVE_STATUS_COLOR = 'GREEN'
 
