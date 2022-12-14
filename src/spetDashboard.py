@@ -1,16 +1,25 @@
+"""
+Functions used to create the user interface
+"""
 from customDashboard import *
 from bokeh.plotting import output_file, show
 
-# import os
 
+def create_rpm_indicators(board, x0, y0, label_size=22, text_size=25, tick_width=6,
+                          tick_length=0.3):
+    """
 
-def create_rpm_indicators(board, x0, y0, label_size= 22, text_size = 25, tick_width = 6,
-                         tick_length=0.3, ):
+    :param board:
+    :param x0:
+    :param y0:
+    :param label_size:
+    :param text_size:
+    :param tick_width:
+    :param tick_length:
+    """
     name = "rpm"
     board.add_gauge(name, x0=x0, y0=y0, min_value=5, max_value=30, start_angle=7 / 6 * np.pi, end_angle=-np.pi / 6,
                     with_background=True, r=1.6, background_r=1.8)
-
-
     board.get_gauge(name).add_annular(values=[(10, 20), (20, 25)], colors=["green", "gold"],
                                             inner_radius=1.55)
     board.get_gauge(name).add_ticks(tick_color="lightgray", tick_nb=5, sub_tick_nb=5, tick_width=tick_width,
@@ -27,9 +36,21 @@ def create_rpm_indicators(board, x0, y0, label_size= 22, text_size = 25, tick_wi
     board.add_counter("use_time", x=x0, y=y0-1, text_color="lightgray", unit="\nminutes")
 
 
-
 def create_battery_indicators(board, x0, y0, ind_name, gauge_nb, label_size= 13, text_size = 16, tick_width = 4,
                               tick_length=0.15, label_radius=0.75):
+    """
+
+    :param board:
+    :param x0:
+    :param y0:
+    :param ind_name:
+    :param gauge_nb:
+    :param label_size:
+    :param text_size:
+    :param tick_width:
+    :param tick_length:
+    :param label_radius:
+    """
     name = "soc_bat_" + str(gauge_nb)
     board.add_gauge(name, x0=x0, y0=y0, start_angle=31/24 * np.pi, end_angle=np.pi/2, with_background=True, background_r=1.15)
     board.get_gauge(name).add_label(angle=np.pi/2, r=1.3, text_size=30, text_color="black", label=ind_name)
@@ -70,6 +91,19 @@ def create_battery_indicators(board, x0, y0, ind_name, gauge_nb, label_size= 13,
 
 def create_drive_indicators(board, x0, y0, ind_name, nb, label_size=13, text_size=16, tick_width=4,
                             tick_length=0.15, label_radius=0.75):
+    """
+
+    :param board:
+    :param x0:
+    :param y0:
+    :param ind_name:
+    :param nb:
+    :param label_size:
+    :param text_size:
+    :param tick_width:
+    :param tick_length:
+    :param label_radius:
+    """
     name = "temp_drive_" + str(nb)
     board.add_gauge(name, x0=x0, y0=y0, start_angle=4/3 * np.pi, end_angle=2/3 * np.pi, with_background=True, background_r=1.15)
     board.get_gauge(name).add_label(angle=np.pi / 2, r=1.3, text_size=30, text_color="black", label=ind_name)
@@ -94,8 +128,22 @@ def create_drive_indicators(board, x0, y0, ind_name, nb, label_size=13, text_siz
     board.get_gauge(name).add_needle("neddle_1", needle_color="white", initial_value=10)
     board.get_gauge(name).add_inner_circle(r=0.22)
 
+
 def create_mppt_indicators(board, x0, y0, ind_name, nb, label_size=13, text_size=16, tick_width=4,
-                                tick_length=0.15, label_radius=0.75):
+                           tick_length=0.15, label_radius=0.75):
+        """
+
+        :param board:
+        :param x0:
+        :param y0:
+        :param ind_name:
+        :param nb:
+        :param label_size:
+        :param text_size:
+        :param tick_width:
+        :param tick_length:
+        :param label_radius:
+        """
         name = "temp_mppt_" + str(nb)
         board.add_gauge(name, x0=x0, y0=y0, start_angle=4 / 3 * np.pi, end_angle=2 / 3 * np.pi, with_background=True,
                         background_r=1.15)
@@ -126,8 +174,17 @@ def create_mppt_indicators(board, x0, y0, ind_name, nb, label_size=13, text_size
         board.get_gauge(name).add_needle("neddle_1", needle_color="white", initial_value=10)
         board.get_gauge(name).add_inner_circle(r=0.22)
 
-def create_status_indicators(board, x0, y0, width=3.6,height=1.8, ):
-    names = ["stat_drive_1", "stat_drive_2", "stat_bat_1", "stat_bat_2","stat_mppt_1", "stat_mppt_2"]
+
+def create_status_indicators(board, x0, y0, width=3.6, height=1.8):
+    """
+
+    :param board:
+    :param x0:
+    :param y0:
+    :param width:
+    :param height:
+    """
+    names = ["stat_drive_1", "stat_drive_2", "stat_bat_1", "stat_bat_2", "stat_mppt_1", "stat_mppt_2"]
     labels = ["Drive I", "Drive II", "Battery I", "Battery II", "MPPT I", "MPPT II"]
     x1 = [0.55, 2.15]
     y1 = [1.4, 0.9, 0.4]
@@ -139,7 +196,10 @@ def create_status_indicators(board, x0, y0, width=3.6,height=1.8, ):
 
 
 def cockpit_view():
+    """
 
+    :return:
+    """
     board = Dashboard(size=1000, x_lim=(0, 9.2), y_lim=(0, 8.4))
     board.add_background(x0=0.1, y0=0.1, angle_r=0.25, width=9, height=8.2)
     create_battery_indicators(board, x0=5.3, y0=4.1, ind_name="Battery I", gauge_nb=1)
@@ -159,10 +219,6 @@ def cockpit_view():
         board.add_image(img_path, x0=0.3, y0=1.4, size=3)
     except:
         print("no internet connection to add logo")
-
-    ## local file display doesn't work (grey zone...)
-    # img_path = os.path.join(os.getcwd(), 'iese_heig-vd_logotype_rouge-rvb.png')
-    # board.add_image(img_path, x0=0.3, y0=0.3, size=3.5)  # 4 division de pixels entiers (1024x352)
 
     return board
 

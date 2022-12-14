@@ -29,11 +29,13 @@ def hex2num(hex_s):
     """
     return int(hex_s, 16)
 
+
 def hex2float(hex4bytes):
     """
     Convert a 4 hexadecimal bytes number or string, to float (import struct)
     """
     return struct.unpack('!f', bytes.fromhex(str(hex4bytes)))[0]
+
 
 def i16(ui16):
     """
@@ -41,7 +43,8 @@ def i16(ui16):
     """
     return ui16-2*32768 if ui16 > 32767 else ui16
 
-class PcanRW():
+
+class PcanRW:
     """
     Object with PCAN identifier as a parameter -> device_id in __init__
     Here are PeakCAN USB functions, and SPET project variables and decoding functions
@@ -49,9 +52,7 @@ class PcanRW():
     PcanHandle = PCAN_NONEBUS  # PCAN_USBBUS1, PCAN_USBBUS2, PCAN_NONEBUS
     Bitrate = PCAN_BAUD_250K
     # PcanId = 0
-
     m_DLLFound = False
-
     # Last read values with ProcessMessageCan function
     ReceivedTimestamp = 0  # seconds
     ReceivedId = 0
@@ -257,7 +258,7 @@ class PcanRW():
         function decode <-- status <-- table
         Called with each received CAN message
         """
-        if self.ReceivedId >= 0x100 and self.ReceivedId <= 0x112:
+        if 0x100 <= self.ReceivedId <= 0x112:
             if self.ReceivedId == 0x100:  # tpdo_1
                 self.BAT_HEARTBEAT1 = self.ReceivedDatas[0]
                 self.BAT_SOC = self.ReceivedDatas[1] / 2  # %
@@ -361,8 +362,8 @@ class PcanRW():
                 self.BAT_WATCHDOG |= 0x10
 
             elif self.ReceivedId == 0x105:  # tpdo_6
-                self.BAT_FLAGS_ERR = bytes([self.ReceivedDatas[0], self.ReceivedDatas[1], self.ReceivedDatas[2], self.ReceivedDatas[3]]).hex()
-                self.BAT_FLAGS_WARN = bytes([self.ReceivedDatas[4], self.ReceivedDatas[5], self.ReceivedDatas[6], self.ReceivedDatas[7]]).hex()
+                self.BAT_FLAGS_ERR = bytes(self.ReceivedDatas[:4]).hex()
+                self.BAT_FLAGS_WARN = bytes(self.ReceivedDatas[4:]).hex()
                 # Errors/Warning share same codes: 1...17, 19, 20, 25, 31
                 # Active bit position -> code number
 
@@ -543,7 +544,7 @@ class PcanRW():
         function decode <-- status <-- table
         Called with each received CAN message
         """
-        if self.ReceivedId >= 0x155 and self.ReceivedId <= 0x1A9:
+        if 0x155 <= self.ReceivedId <= 0x1A9:
             self.MPPT_ID = (self.ReceivedId - 0x155) // 3  # floor division with "//"
 
             # messages 0,1,2 with CAN_ID - 0x155 - 3*ID :
