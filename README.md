@@ -22,4 +22,8 @@ Electrical playing propulsion demo
     ```shell 
     poetry install
     ```
-6. Make src directory as Source Root
+6. Make src directory as Source Root, then:
+    ```shell
+    poetry run python spetUI.py
+    ```
+
