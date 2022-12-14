@@ -1,0 +1,29 @@
+compilation avec pyinstaller
+https://pypi.org/project/pyinstaller/
+https://pyinstaller.org/en/stable/
+https://pyinstaller.org/en/stable/operating-mode.html
+
+
+
+pip install -U pyinstaller
+set PATH=%PATH%;C:\Users\admin\AppData\Roaming\Python\Python310\Scripts
+cd chemin_vers\spetUI.py
+pyinstaller spetUI.py
+
+options utiles:
+-F, --onefile
+-w, --windowed, --noconsole
+-c, --console, --nowindowed
+
+ou direct:
+C:\Users\admin\AppData\Roaming\Python\Python310\Scripts\pyinstaller.exe --icon=decollage_freepik.png -F spetUI.py
+
+supprimer dossier avant recompilation après modifs !
+
+
+
+
+https://cython.org/
+https://cython.readthedocs.io/en/latest/index.html
+
+
